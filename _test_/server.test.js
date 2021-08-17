@@ -8,7 +8,7 @@ describe('Middleware',()=>{
     it('should test that every thing is working fine',async()=>{
         let status=200;
         let param='/';
-        let text='Working fine'
+        let text='Hello world'
         const respons=await request.get(param);
         expect(respons.status).toBe(status);
         expect(respons.text).toBe(text);
@@ -23,7 +23,7 @@ describe('Middleware',()=>{
     });
 
     it('should test handelar error ',async()=>{
-        let status=500;
+        let status=404;
         let param='/bad';
         const respons=await request.get(param);
         expect(respons.status).toBe(status);
@@ -31,7 +31,7 @@ describe('Middleware',()=>{
     });
 
     it('should test data response ',async()=>{
-        let status=200;
+        let status=404;
         let param='/status';
         const respons=await request.get(param);
         expect(respons.status).toBe(status);
